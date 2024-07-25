@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "pacientes": {
+      ".read": "auth !== null",
+      ".write": "auth !== null"
+    },
+    "logs": {
+      ".read": "auth !== null",
+      ".write": "auth !== null"
+    }
+  }
+}
