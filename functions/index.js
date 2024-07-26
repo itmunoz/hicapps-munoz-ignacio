@@ -60,7 +60,7 @@ async function createPaciente(req, res) {
   try {
     await admin.database().ref(`/pacientes/${uuid}`).set(nuevoPaciente);
     await admin.database().ref(`/logs`).push({
-      createdAt: new Date().toISOString(),
+      createdAt: Date.now(),
       message: `Acceso a endpoint POST /pacientes`,
     });
     res.status(200).send(
@@ -90,7 +90,7 @@ async function getPacientes(req, res) {
     const pacientes = snapshot.val();
 
     await admin.database().ref(`/logs`).push({
-      createdAt: new Date().toISOString(),
+      createdAt: Date.now(),
       message: `Acceso a endpoint GET /pacientes`,
     });
 
@@ -136,7 +136,7 @@ async function getPaciente(req, res, uuid) {
       }
 
       await admin.database().ref(`/logs`).push({
-        createdAt: new Date().toISOString(),
+        createdAt: Date.now(),
         message: `Acceso a endpoint GET /pacientes/${uuid}`,
       });
 
