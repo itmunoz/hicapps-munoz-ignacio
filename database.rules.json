@@ -5,7 +5,7 @@
       ".write": "auth !== null"
     },
     "logs": {
-      ".read": "auth !== null",
+      ".read": false,
       ".write": "auth !== null"
     }
   }
